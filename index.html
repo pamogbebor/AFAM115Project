@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AFAM 115 Project - Pam Ogbebor</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+    gap: 70px; /* Controls both row and column gaps */
+    margin: 50px;
+    padding: 30px;
+}
+.thumbnail {
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: white;
+    padding: 40px; /* Larger padding for spacious feel */
+    border-radius: 20px; /* Softer corners */
+    display: flex;
+    gap: 30px; /* Increase spacing between elements */
+    align-items: flex-start; /* Align content to the top */
+    max-width: 75%; /* Allow the modal to expand further */
+    width: 80%; /* Adjust width */
+    height: 80%; /* Taller modal */
+   
+}
+.modal-content p, 
+.modal-content h1, 
+.modal-content h2, 
+.modal-content h3 {
+    font-size: 15px; /* Smaller text */
+    line-height: 1.5; /* Ensure readability with smaller font */
+    color: #333; /* Ensure contrast against white background */
+}
+
+.modal img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+.close {
+    position: absolute;
+    top: 20px; /* Closer to the top */
+    right: 40px; /* Closer to the right edge */
+    color: white;
+    font-size: 80px; /* Slightly smaller for proportion */
+    cursor: pointer;
+}
+    </style>
+
+</head>
+<body>
+    <h1>Contemporary Media Representation of Queer and Trans People </h1>
+    <!-- <h2> Media Catalogue</h2> -->
+    <div class="gallery">
+
+       <!-- 1) Young Royals -->
+        <div class="thumbnail" onclick="openModal('Young Royals (2021)', '<b>Background:</b> Young Royals is a Swedish teen television show that centers around the Swedish Prince Wilhelm and his love interest, Simon Eriksson. The two meet at a boarding school and develop a close, romantic relationship. Their romance is outed when a fellow student leaks an intimate video of them online. Due to Wilhelm\'s royal status and social class, their relationship is seen as taboo. Wilhelm is subsequently forced to deny both his involvement in the video and his relationship with Simon.<br></br><b>Audience Reactions (Realistic):</b> The portrayal of Wilhelm and Simon\'s relationship resonates deeply with audiences because it avoids common queer media tropes. Unlike stories with dramatic “coming-out” moments or characters who suffer identity crises, Young Royals presents two individuals who are already comfortable with their sexuality. Instead, the conflict stems from external pressures like class dynamics and family expectations. Fans particularly appreciate the subtle and realistic depiction of romance that are often expressed through small gestures like glances, hugs, and hand-holding. This portrayal highlights that their love is natural, and the tension arises from societal power structures, which adds realism to the show. Sweden\'s progressive stance as one of the first countries to legalize same-sex marriage further complements this nuanced depiction.', 'movie1.png')">
+            <img src="movie1.png" alt="Young Royals">
+        </div>
+
+        <!-- 2) Call Me by Your Name -->
+        <div class="thumbnail" onclick="openModal('Call Me by Your Name (2017)', '', 'movie8.png')">
+            <img src="movie8.png" alt="Call Me by Your Name">
+        </div>
+
+        <!-- 3) But I'm a Cheerleader -->
+        <div class="thumbnail" onclick="openModal('But I\'m a Cheerleader (1999)', '', 'movie3.png')">
+            <img src="movie3.png" alt="But I\'m a Cheerleader">
+        </div>
+
+        <!-- 4) Bridgerton -->
+        <div class="thumbnail" onclick="openModal('Bridgerton (2020)', '', 'movie4.png')">
+            <img src="movie4.png" alt="Bridgerton">
+        </div>
+
+        <!-- 5) Sex and The City -->
+        <div class="thumbnail" onclick="openModal('Sex and The City (1998)', '', 'movie5.png')">
+            <img src="movie5.png" alt="Sex and The City">
+        </div>
+
+        <!-- 6) The Umbrella Academy -->
+        <div class="thumbnail" onclick="openModal('The Umbrella Academy (2019)', '', 'movie6.png')">
+            <img src="movie6.png" alt="The Umbrella Academy">
+        </div>
+        
+        <!-- 8) Red, White, & Royal Blue --> 
+        <div class="thumbnail" onclick="openModal('Red, White, & Royal Blue (2023)', '', 'movie2.png')">
+        <img src="movie2.png" alt="Red, White, & Royal Blue">
+        </div>
+
+        <!-- 9) Sex Education -->
+        <div class="thumbnail" onclick="openModal('Sex Education (2019)', '', 'movie9.png')">
+            <img src="movie9.png" alt="Sex Education">
+        </div>
+
+        <!-- 10) Derry Girls -->
+        <div class="thumbnail" onclick="openModal('Derry Girls (2018)', '', 'movie10.png')">
+            <img src="movie10.png" alt="Derry Girls">
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Modal Image">
+            <div>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"> </script>
+</body>
+</html>
